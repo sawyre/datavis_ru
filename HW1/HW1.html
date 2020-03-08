@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <script type="text/javascript">
+      function fun1() {
+        let chbox;
+        chbox = document.getElementById("checkMood");
+        if (chbox.checked) {
+		  document.getElementById("mood").innerHTML = "Sad";
+          document.getElementById("sad").style.display = "block";
+		  document.getElementById("happy").style.display = "none";
+        } else {
+		  document.getElementById("mood").innerHTML = "Happy";
+          document.getElementById("sad").style.display = "none";
+		  document.getElementById("happy").style.display = "block";
+        }
+      }
+    </script>
+	<style type="text/css">
+	  path[id="sad"] {
+	    display:block;
+	  }
+	  path[id="happy"] {
+	    display:none;
+	  }
+    </style>
+  </head>
+  <body>
+    <input
+      type="checkbox"
+      id="checkMood"
+      onchange="fun1()"
+      checked
+    />
+    <label id="mood" for="checkMood">
+	  Sad
+    </label>
+    <svg viewBox="0 0 600 600">
+      <circle cx="100" cy="100" r="100" fill="#A0A0A0"></circle>
+      <rect x="60" y="70" width="20" height="20"></rect>
+      <rect x="130" y="70" width="20" height="20"></rect>
+
+      <path
+	    id="sad"
+        stroke="#AAAA00"
+        d="M 50 150 Q 100 100 150 150">
+	  </path>
+	  <path
+        id="happy"
+        stroke="#AAAA00"
+        d="M 50 130 Q 100 180 150 130">
+      </path>
+    </svg>
+  </body>
+</html>
